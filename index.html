@@ -557,6 +557,194 @@
         
     </div> 
     </div>
+
+    <div class="container">
+      <div class="form threedform">
+        <div class="white section-one padding-class">
+            <!-- <h3 class="text-center">Whiteboard</h3> -->
+            <div class="duration border-duration">
+                <span>
+                    <input type="radio" id="t1" name="threeddurationcount" value="threedalpha">
+                    <label for="t1">Enter Duration</label>
+                </span>
+                <span>
+                    <input type="radio" id="t2" name="threeddurationcount" value="threedbeta">
+                    <label for="t2">Voiceover Word Count</label>
+                </span>
+                <span>
+                    <input type="radio" id="t3" name="threeddurationcount" value="threedgamma">
+                    <label for="t3">Paste Script</label>
+                </span>
+            </div>
+            <br>
+            <br>
+            <span class="flex-col">
+                <span class="flex-col width70 threedduration_range_span">
+                    
+                    <input id="threedduration_range" name="threedduration_range" type="range" min="0" max="100" step="5" value="0">
+                    <span class="flex duration-time pt-3">00:00:<p id="threedsec">00</p></span>
+                    <!-- <span class="width70 d-flex justify-content-between"><p>0 Seconds</p> <p>100 Seconds</p></span> -->
+                </span>
+                <input id="threedduration_voiceover" type="number" name="threedduration_voiceover" class="form-control voiceover_class">
+                <span id="threedscriptspan" class="flex-col">
+                    <textarea class="paste_script" id="threedduration_script" name="threedduration_script" rows="5" class="form-control" placeholder="Paste Your Script"></textarea>
+                    <span class="d-flex width100 col-gap-10 justify-content-start">
+                        <span class="flex col-gap-10"><p>WORD COUNT: </p><p id="threedwrdcnt"></p></span>
+                        <span class="flex col-gap-10"><p>(APPROX</p><p id="threedaprxmnt"></p><p>MINUTES)</p></span>
+                    </span>
+                </span>
+            </span>
+        </div>
+        <div class="white section-two padding-class">
+            <h3 class="text-center">Choose Animation Quality Any (1 of 3)*</h3>
+            <div class="duration">
+              <div class="label-img">
+                <span>
+                    <input type="radio" id="threedlowan" name="threedanimationquality" value="threedlowan">
+                    <label for="threedlowan" class="showExample" target="13">Frame Rate 1</label>
+                </span>
+               
+              </div>
+                <div class="label-img">
+                <span>
+                    <input type="radio" id="threedmediuman" name="threedanimationquality" value="threedmediuman">
+                    
+                    <label for="threedmediuman" class="showExample" target="14">Frame Rate 2</label>
+                </span>
+               
+              </div>
+                <div class="label-img">
+                <span>
+                    <input type="radio" id="threedhighan" name="threedanimationquality" value="threedhighan">
+                   
+                    <label for="threedhighan" class="showExample" target="15">Frame Rate 3 </label>
+                </span>
+                
+              </div>
+            </div>
+            <div class="container showexamplediv">
+              <div id="div13" class="targetDiv">
+              <div class="container ">
+                <div class="col-md-10 m-auto">
+                  <div class="video">
+                    
+                   <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                    
+                    <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                  </div>
+                </div>
+              </div>
+               
+              </div>
+              <div id="div14" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="div15" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+            
+        </div>
+        <div class="white section-three padding-class">
+            <h3 class="text-center">Choose Character Quality Any (1 of 3)*</h3>
+            <div class="duration">
+              <div class="label-img">
+                <span>
+                    <input type="radio" id="threedlowch" name="threedcharacterquality" value="threedlowch">
+                    <label for="threedlowch" class="showExample" target="16">Frame Rate 1 </label>
+                </span>
+               
+              </div>
+                <div class="label-img">
+                <span>
+                    <input type="radio" id="threedmediumch" name="threedcharacterquality" value="threedmediumch">
+                    <label for="threedmediumch" class="showExample" target="17">Frame Rate 2 </label>
+                </span>
+
+              </div>
+                <div class="label-img">
+                <span>
+                    <input type="radio" id="threedhighch" name="threedcharacterquality" value="threedhighch">
+                    <label for="threedhighch" class="showExample" target="18">Frame Rate 2 </label>
+                </span>
+                
+              </div>
+            </div>
+            <div class="container showexamplediv">
+              <div id="div16" class="targetDiv">
+              <div class="container ">
+                <div class="col-md-10 m-auto">
+                  <div class="video">
+                    
+                   <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                    
+                    <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                  </div>
+                </div>
+              </div>
+               
+              </div>
+              <div id="div17" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="div18" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </div>
+        <section class="total-particle">
+          <!-- <div id="particle"></div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 position-relative z-index-1 d-flex justify-content-center align-items-center total-inner padding-class flex-column">
+                <h4>Estimated Amount</h4>
+                <p> <input type="text" name="threedtotal" id="threedtotal" value="0" class="form-control form-total"></p>
+                <p class="text-white">This estimate should be viewed as a rough guide only, as many factors specific to your project can affect the final cost.<br> Get in touch to discuss your specific requirements.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+    </div> 
+    </div>
+
+  
     
         
   </section>

@@ -190,7 +190,7 @@ html {
   margin-left: 15px;
   color: #7E7E7E;
 } */
-.whiteduration_range_span * , .expduration_range_span *{
+.whiteduration_range_span * , .expduration_range_span * , .threedduration_range_span *{
 
 font-size: 35px;
 font-weight: 400;
@@ -439,7 +439,7 @@ margin: 0 10px;
 .duration > span > label{
   cursor: pointer;
 }
-input[type=range], input[type=number], #expscriptspan, #whitescriptspan{
+input[type=range], input[type=number], #expscriptspan, #whitescriptspan ,span#threedscriptspan{
   width: 80%;
 }
 #expduration_script{

@@ -308,9 +308,127 @@ $(document).ready(function(){
                 break;                                
         }
     });   
-    jQuery(document).ready(function(){
+
+
+      // --------------3d Animation Variables-----------------
+      let threedtotal = $('#threedtotal');
+    
+      let threedone = 0;
+      let threedtwo = 0;
+      let threedthree = 0;
+      
+      let threedsec = $('#threedsec');
+      let threedwordCount = $('#threedwrdcnt');
+      let threedapproxMinute = $('#threedaprxmnt');
+      let threeddurationRange = $('#threedduration_range');
+      let threeddurationRangeSpan = $('.threedduration_range_span');
+      let threeddurationVoiceover = $('#threedduration_voiceover');
+      let threeddurationScript = $('#threedscriptspan');
+      
+      let threedlowQualityAnimationPrice = 1000; 
+      let threedmediumQualityAnimationPrice = 5000;
+      let threedhighQualityAnimationPrice = 10000;
+      
+      let threedlowQualityCharacterPrice = 2000; 
+      let threedmediumQualityCharacterPrice = 6000; 
+      let threedhighQualityCharacterPrice = 11000;
+      
+      threeddurationRangeSpan.hide();
+      threeddurationVoiceover.hide();
+      threeddurationScript.hide();
+      
+      function threedrecal(){
+          let threedtotalValue = (Number(threedone) + Number(threedtwo) + Number(threedthree)).toFixed(2);
+          $('#threedtotal').val("$ "+threedtotalValue);
+          return threedtotalValue;
+      }
+      
+          
+      //-----------------
+      
+      $('input[type=radio][name=threeddurationcount]').change(function() {
+          if(this.value == "threedalpha"){
+              threeddurationVoiceover.hide();
+              threeddurationScript.hide();
+              threeddurationRangeSpan.show();
+              $(document).on('input', '#threedduration_range', function() {
+                  threedone = 0;
+                  threedrecal();
+                  let threedrangeInSeconds = Number($(this).val());
+                  threedsec.html(threedrangeInSeconds);
+                  x = threedrangeInSeconds * 0.016666667;
+                  threedone = x.toFixed(1);
+                  threedrecal();
+              });
+          }
+          else if(this.value == "threedbeta"){
+              threeddurationRangeSpan.hide();
+              threeddurationScript.hide();
+              threeddurationVoiceover.show();
+              $(document).on('input', '#threedduration_voiceover', function(){
+                  threedone = 0;
+                  threedrecal();                
+                  let threednum = Number(this.value);
+                  threedone = ((threednum * 0.8)*0.016666667).toFixed(2);
+                  threedrecal();
+              });
+          }
+          else if(this.value == "threedgamma"){
+              threeddurationRangeSpan.hide();
+              threeddurationVoiceover.hide();
+              threeddurationScript.show();
+              $(document).on('input', '#threedduration_script', function() {
+                  threedone = 0;
+                  threedrecal();                
+                  let threedtext = this.value,
+                  threedcount = threedtext.trim().replace(/\s+/g, ' ').split(' ').length;
+                  threedwordCount.html(threedcount)
+                  a = threedcount * 0.8;
+                  b = a.toFixed(2);
+                  c = (b / 60).toFixed(2);
+                  threedapproxMinute.html(c);
+                  threedone = (b * 0.016666667).toFixed(2);
+                  threedrecal();
+              });
+          }
+      });
+      $('input[type=radio][name=threedanimationquality]').change(function() {
+          let threedquality = this.value;
+          switch (threedquality) {
+              case 'threedlowan':
+                  threedtwo = threedlowQualityAnimationPrice;
+                  threedrecal();
+                  break;
+              case 'threedmediuman':
+                  threedtwo = threedmediumQualityAnimationPrice;
+                  threedrecal();
+                  break;
+              case 'threedhighan':
+                  threedtwo = threedhighQualityAnimationPrice;
+                  threedrecal();
+                  break;                                
+          }
+      });
+      $('input[type=radio][name=threedcharacterquality]').change(function() {
+          let threedquality = this.value;
+          switch (threedquality) {
+              case 'threedlowch':
+                  threedthree = threedlowQualityCharacterPrice;
+                  threedrecal();
+                  break;
+              case 'threedmediumch':
+                  threedthree = threedmediumQualityCharacterPrice;
+                  threedrecal();
+                  break;
+              case 'threedhighch':
+                  threedthree = threedhighQualityCharacterPrice;
+                  threedrecal();
+                  break;                                
+          }
+      });   
+   
         $(".targetDiv").hide();
-    });
+
     
     
     jQuery(function(){
