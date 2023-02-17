@@ -30,6 +30,8 @@ $(document).ready(function(){
     let expdurationRangeSpan = $('.expduration_range_span');
     let expdurationVoiceover = $('#expduration_voiceover');
     let expdurationScript = $('#expscriptspan');
+    
+    let s = $('#s');
 
     let explowQualityAnimationPrice = 1000; 
     let expmediumQualityAnimationPrice = 5000;
@@ -61,6 +63,7 @@ $(document).ready(function(){
         var m = Math.floor(s/60); // Minutes
         s -= m*60;
         return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
+        // console.log(h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s)); //zero padding on minutes and seconds
     }
     
     $('input[type=radio][name=expdurationcount]').change(function() {
@@ -73,6 +76,8 @@ $(document).ready(function(){
                 exprecal();
                 let exprangeInSeconds = Number($(this).val());
                 console.log(exprangeInSeconds , 'secconds');
+                s.html("");
+                s.html(secondsToHMS(exprangeInSeconds));
                 expsec.html(exprangeInSeconds);
                 x = exprangeInSeconds * 0.016666667;
                 expone = x.toFixed(1);
