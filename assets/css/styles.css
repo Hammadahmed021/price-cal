@@ -77,6 +77,20 @@ p.total-class {
   pointer-events: none;
   text-align: right;
   font-size: 14px;
+  padding: 0;
+  padding-right: 5px;
+}
+p.total-class span.withlabel {
+  text-align: right !important;
+  padding-right: 5px;
+}
+p.total-class span.main-span span#showcount {
+  font-size: 10px;
+  color: #030e4c;
+}
+p.total-class span.total-amount-class {
+  margin: 5px 0 !important;
+  display: block;
 }
 p.total-class span.main-span span{
   font-size: 14px;
@@ -122,8 +136,8 @@ p.total-class span.main-span {
   background: #FF7B00;
   height: 14px;
   width: 14px;
-  top: 2.5px;
-  left: 2px;
+  top: 2.3px;
+    left: 2.3px;
   right: 0;
   bottom: 0;
   border-radius: 50%;

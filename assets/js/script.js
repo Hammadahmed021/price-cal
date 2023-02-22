@@ -79,6 +79,9 @@ $(document).ready(function(){
         // console.log(h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s)); //zero padding on minutes and seconds
     }
     
+    
+
+
     $('input[type=radio][name=expdurationcount]').change(function() {
         if(this.value == "expalpha"){
             expdurationVoiceover.hide();
@@ -137,7 +140,14 @@ $(document).ready(function(){
                 exprecal();
             });
         }
+        let x = $("input[type='radio'][name='expdurationcount']:checked").attr('alt');  
+        console.log(x);      
+        document.getElementById("showcount").innerHTML = x;
     });
+
+    
+
+
     $('input[type=radio][name=expanimationquality]').change(function() {
         let expquality = this.value;
         switch (expquality) {

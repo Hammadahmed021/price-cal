@@ -148,15 +148,15 @@
            
             <div class="duration border-duration">
                 <span>
-                    <input type="radio" id="expp1" name="expdurationcount" value="expalpha">
+                    <input type="radio" id="expp1" name="expdurationcount" value="expalpha" alt="Enter Duration">
                     <label for="expp1">Enter Duration</label>
                 </span>
                 <span>
-                    <input type="radio" id="expp2" name="expdurationcount" value="expbeta">
+                    <input type="radio" id="expp2" name="expdurationcount" value="expbeta" alt="Voiceover Word Count">
                     <label for="expp2">Voiceover Word Count</label>
                 </span>
                 <span>
-                    <input type="radio" id="expp3" name="expdurationcount" value="expgamma">
+                    <input type="radio" id="expp3" name="expdurationcount" value="expgamma" alt="Paste Script">
                     <label for="expp3">Paste Script</label>
                 </span>
             </div>
@@ -371,7 +371,12 @@
         </section>
         <p class="total-class">
           <span class="card-header-total">Cost Estimation</span>
-          <span class="main-span"><span>Time Duration</span><input type="text" name="expdurationvalueone" id="expduration" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span>Time Duration</span>
+
+         <span class="withlabel">
+         <input type="text" name="expdurationvalueone" id="expduration" value="0" class="form-control form-total"> <span id="showcount">Enter Duration</span>
+        </span>
+        </span>
           <span class="main-span"><span>Animation Style</span><input type="text" name="expanimationstyle" id="expanimationstyle" value="0" class="form-control form-total"></span>
            <span class="main-span"><span>Drawing Details</span><input type="text" name="expdrawingdetails" id="expdrawingdetails" value="0" class="form-control form-total"></span>
            <span class="main-span"><span>Additional Features</span><input type="text" name="expadditionalfeatures" id="expadditionalfeatures" value="0" class="form-control form-total"></span>
@@ -950,7 +955,7 @@
         <p class="total-class">
           <span class="card-header-total">Cost Estimation</span>
           <span class="main-span"><span>Time Duration</span><input type="text" name="threeddurationvalueone" id="threedduration" value="0" class="form-control form-total"></span>
-          <span class="main-span"><span> Type</span><input type="text" name="threedanimationstyle" id="threedanimationstyle" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span>Animation Type</span><input type="text" name="threedanimationstyle" id="threedanimationstyle" value="0" class="form-control form-total"></span>
            <span class="main-span"><span>Animation Quality</span><input type="text" name="threeddrawingdetails" id="threeddrawingdetails" value="0" class="form-control form-total"></span>
            <span class="main-span"><span>Additional Features</span><input type="text" name="threedadditionalfeatures" id="threedadditionalfeatures" value="0" class="form-control form-total"></span>
           <span class="total-amount-class">Estimated Amount <input type="text" name="threedtotal" id="threedtotal" value="0" class="form-control form-total"></span>
