@@ -13,6 +13,7 @@ $(document).ready(function(){
 
     // --------------2D Explainer Variables-----------------
     let exptotal = $('#exptotal');
+    let exptotal1 = $('#exptotal1');
     
     let expone = 0;
     let exptwo = 0;
@@ -31,7 +32,10 @@ $(document).ready(function(){
     let expdurationVoiceover = $('#expduration_voiceover');
     let expdurationScript = $('#expscriptspan');
     
-    let s = $('#s');
+    let s1 = $('#s1');
+    let s2 = $('#s2');
+    let s3 = $('#s3');
+    
 
     let explowQualityAnimationPrice = 1000; 
     let expmediumQualityAnimationPrice = 5000;
@@ -52,9 +56,17 @@ $(document).ready(function(){
 
     function exprecal(){
         let exptotalValue = (Number(expone) + Number(exptwo) + Number(expthree) + Number(expfourstory) + Number(expfourvoice) + Number(expfoursound) + Number(expfourmusic)).toFixed(2);
+        let exptotalValue1 = (Number(expone) + Number(exptwo) + Number(expthree) + Number(expfourstory) + Number(expfourvoice) + Number(expfoursound) + Number(expfourmusic)).toFixed(2);
         $('#exptotal').val("$ "+exptotalValue);
-        return exptotalValue;
+        $('#exptotal1').val("$ "+exptotalValue1);
+        return exptotalValue , exptotalValue1;
     }
+    function expchecked(){
+        let exptotalValue = ( Number(expfourstory) + Number(expfourvoice) + Number(expfoursound) + Number(expfourmusic)).toFixed(2);
+        $('#expadditionalfeatures').val("$ "+exptotalValue);      
+        return exptotalValue ;
+    }
+   
    
     
     function secondsToHMS(s) {
@@ -62,7 +74,8 @@ $(document).ready(function(){
         s -= h*3600;
         var m = Math.floor(s/60); // Minutes
         s -= m*60;
-        return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
+        return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s);       
+        //zero padding on minutes and seconds
         // console.log(h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s)); //zero padding on minutes and seconds
     }
     
@@ -71,28 +84,35 @@ $(document).ready(function(){
             expdurationVoiceover.hide();
             expdurationScript.hide();
             expdurationRangeSpan.show();
+            $('#expduration').val(0);
             $(document).on('input', '#expduration_range', function() {
                 expone = 0;
                 exprecal();
                 let exprangeInSeconds = Number($(this).val());
                 console.log(exprangeInSeconds , 'secconds');
-                s.html("");
-                s.html(secondsToHMS(exprangeInSeconds));
+                s1.html("");
+                s1.html(secondsToHMS(exprangeInSeconds));
                 expsec.html(exprangeInSeconds);
                 x = exprangeInSeconds * 0.016666667;
                 expone = x.toFixed(1);
+                 $('#expduration').val(null);
+                 $('#expduration').val("Time: "+expone);
                 exprecal();
             });
         }
+    
         else if(this.value == "expbeta"){
             expdurationRangeSpan.hide();
             expdurationScript.hide();
             expdurationVoiceover.show();
+            $('#expduration').val(0);
             $(document).on('input', '#expduration_voiceover', function(){
                 expone = 0;
                 exprecal();                
                 let expnum = Number(this.value);
                 expone = ((expnum * 0.8)*0.016666667).toFixed(2);
+                $('#expduration').val(null);
+                $('#expduration').val("Time: "+expone);
                 exprecal();
             });
         }
@@ -100,6 +120,7 @@ $(document).ready(function(){
             expdurationRangeSpan.hide();
             expdurationVoiceover.hide();
             expdurationScript.show();
+            $('#expduration').val(0);
             $(document).on('input', '#expduration_script', function() {
                 expone = 0;
                 exprecal();                
@@ -111,6 +132,8 @@ $(document).ready(function(){
                 c = (b / 60).toFixed(2);
                 expapproxMinute.html(c);
                 expone = (b * 0.016666667).toFixed(2);
+                $('#expduration').val(null);
+                $('#expduration').val("Time: "+expone);
                 exprecal();
             });
         }
@@ -120,14 +143,17 @@ $(document).ready(function(){
         switch (expquality) {
             case 'explowan':
                 exptwo = explowQualityAnimationPrice;
+                $('#expanimationstyle').val("$ "+exptwo);
                 exprecal();
                 break;
             case 'expmediuman':
                 exptwo = expmediumQualityAnimationPrice;
+                $('#expanimationstyle').val("$ "+exptwo);
                 exprecal();
                 break;
             case 'exphighan':
                 exptwo = exphighQualityAnimationPrice;
+                $('#expanimationstyle').val("$ "+exptwo);
                 exprecal();
                 break;                                
         }
@@ -137,14 +163,17 @@ $(document).ready(function(){
         switch (expquality) {
             case 'explowch':
                 expthree = explowQualityCharacterPrice;
+                $('#expdrawingdetails').val("$ "+expthree);
                 exprecal();
                 break;
             case 'expmediumch':
                 expthree = expmediumQualityCharacterPrice;
+                $('#expdrawingdetails').val("$ "+expthree);
                 exprecal();
                 break;
             case 'exphighch':
                 expthree = exphighQualityCharacterPrice;
+                $('#expdrawingdetails').val("$ "+expthree);
                 exprecal();
                 break;                                
         }
@@ -163,46 +192,64 @@ $(document).ready(function(){
     $("#expstoryboard").click(function () {
         if ($(this).is(":checked")) {
             expfourstory = expStoryboardPrice;
+            $('#expadditionalfeatures').val(expfourstory);
+            expchecked();
             exprecal();
         } else {
             expfourstory = 0;
+            expchecked();
             exprecal();
         }
     });
     $("#expvoiceover").click(function () {
         if ($(this).is(":checked")) {
             expfourvoice = expVoiceoverPrice;
+            $('#expadditionalfeatures').val(expfourvoice);
+            expchecked();
             exprecal();
         } else {
             expfourvoice = 0;
+            expchecked();
             exprecal();
         }
     });
     $("#expsoundeffects").click(function () {
         if ($(this).is(":checked")) {
             expfoursound = expSoundeffectsPrice;
+            $('#expadditionalfeatures').val(expfoursound);
+            expchecked();
             exprecal();            
         } else {
             expfoursound = 0;
+            expchecked();
             exprecal();
         }
     });
     $("#expmusictrack").click(function () {
         if ($(this).is(":checked")) {
             expfourmusic = expMusictrackPrice;
+            $('#expadditionalfeatures').val(expfourmusic);
+            expchecked();
             exprecal();            
         } else {
             expfourmusic = 0;
+            expchecked();
             exprecal();
         }
     });        
     
     // --------------Whiteboard Variables-----------------
     let whitetotal = $('#whitetotal');
+    let whitetotal1 = $('#whitetotal1');
     
     let whiteone = 0;
     let whitetwo = 0;
     let whitethree = 0;
+
+    let whitefourstory = 0;
+    let whitefourvoice = 0;
+    let whitefoursound = 0;
+    let whitefourmusic = 0;
     
     let whitesec = $('#whitesec');
     let whitewordCount = $('#whitewrdcnt');
@@ -219,15 +266,30 @@ $(document).ready(function(){
     let whitelowQualityCharacterPrice = 2000; 
     let whitemediumQualityCharacterPrice = 6000; 
     let whitehighQualityCharacterPrice = 11000;
+    let whitescreenQualityCharacterPrice = 12000;
+    let whiteactionQualityCharacterPrice = 13000;
+
+    let whiteStoryboardPrice = 2000; 
+    let whiteVoiceoverPrice = 3000; 
+    let whiteSoundeffectsPrice = 4000;    
+    let whiteMusictrackPrice = 5000; 
     
     whitedurationRangeSpan.hide();
     whitedurationVoiceover.hide();
     whitedurationScript.hide();
     
     function whiterecal(){
-        let whitetotalValue = (Number(whiteone) + Number(whitetwo) + Number(whitethree)).toFixed(2);
+        let whitetotalValue = (Number(whiteone) + Number(whitetwo) + Number(whitethree) + Number(whitefourstory) + Number(whitefourvoice) + Number(whitefoursound) + Number(whitefourmusic)).toFixed(2);
+        let whitetotalValue1 = (Number(whiteone) + Number(whitetwo) + Number(whitethree) + Number(whitefourstory) + Number(whitefourvoice) + Number(whitefoursound) + Number(whitefourmusic)).toFixed(2);
         $('#whitetotal').val("$ "+whitetotalValue);
-        return whitetotalValue;
+        $('#whitetotal1').val("$ "+whitetotalValue1);
+        return whitetotalValue , whitetotalValue1;
+    }
+
+    function whitechecked(){
+        let whitetotalValue = ( Number(whitefourstory) + Number(whitefourvoice) + Number(whitefoursound) + Number(whitefourmusic)).toFixed(2);
+        $('#whiteadditionalfeatures').val("$ "+whitetotalValue);      
+        return whitetotalValue ;
     }
     
         
@@ -238,13 +300,18 @@ $(document).ready(function(){
             whitedurationVoiceover.hide();
             whitedurationScript.hide();
             whitedurationRangeSpan.show();
+            $('#whiteduration').val(0);
             $(document).on('input', '#whiteduration_range', function() {
                 whiteone = 0;
                 whiterecal();
                 let whiterangeInSeconds = Number($(this).val());
+                s2.html("");
+                s2.html(secondsToHMS(whiterangeInSeconds));
                 whitesec.html(whiterangeInSeconds);
                 x = whiterangeInSeconds * 0.016666667;
                 whiteone = x.toFixed(1);
+                $('#whiteduration').val(null);
+                $('#whiteduration').val("Time: "+whiteone);
                 whiterecal();
             });
         }
@@ -252,11 +319,14 @@ $(document).ready(function(){
             whitedurationRangeSpan.hide();
             whitedurationScript.hide();
             whitedurationVoiceover.show();
+            $('#whiteduration').val(0);
             $(document).on('input', '#whiteduration_voiceover', function(){
                 whiteone = 0;
                 whiterecal();                
                 let whitenum = Number(this.value);
                 whiteone = ((whitenum * 0.8)*0.016666667).toFixed(2);
+                $('#whiteduration').val(null);
+                $('#whiteduration').val("Time: "+whiteone);
                 whiterecal();
             });
         }
@@ -264,6 +334,7 @@ $(document).ready(function(){
             whitedurationRangeSpan.hide();
             whitedurationVoiceover.hide();
             whitedurationScript.show();
+            $('#whiteduration').val(0);
             $(document).on('input', '#whiteduration_script', function() {
                 whiteone = 0;
                 whiterecal();                
@@ -275,6 +346,8 @@ $(document).ready(function(){
                 c = (b / 60).toFixed(2);
                 whiteapproxMinute.html(c);
                 whiteone = (b * 0.016666667).toFixed(2);
+                $('#whiteduration').val(null);
+                $('#whiteduration').val("Time "+whiteone);
                 whiterecal();
             });
         }
@@ -284,16 +357,29 @@ $(document).ready(function(){
         switch (whitequality) {
             case 'whitelowan':
                 whitetwo = whitelowQualityAnimationPrice;
+                $('#whiteanimationstyle').val("$ "+whitetwo);
                 whiterecal();
                 break;
             case 'whitemediuman':
                 whitetwo = whitemediumQualityAnimationPrice;
+                $('#whiteanimationstyle').val("$ "+whitetwo);
                 whiterecal();
                 break;
             case 'whitehighan':
                 whitetwo = whitehighQualityAnimationPrice;
+                $('#whiteanimationstyle').val("$ "+whitetwo);
                 whiterecal();
-                break;                                
+                break; 
+            case 'whitescreen':
+                whitetwo = whitescreenQualityCharacterPrice;
+                $('#whiteanimationstyle').val("$ "+whitetwo);
+                whiterecal();
+                break; 
+            case 'whitelive':
+                whitetwo = whiteactionQualityCharacterPrice;
+                $('#whiteanimationstyle').val("$ "+whitetwo);
+                whiterecal();
+                break;                                    
         }
     });
     $('input[type=radio][name=whitecharacterquality]').change(function() {
@@ -301,26 +387,82 @@ $(document).ready(function(){
         switch (whitequality) {
             case 'whitelowch':
                 whitethree = whitelowQualityCharacterPrice;
+                $('#whitedrawingdetails').val("$ "+whitethree);
                 whiterecal();
                 break;
             case 'whitemediumch':
                 whitethree = whitemediumQualityCharacterPrice;
+                $('#whitedrawingdetails').val("$ "+whitethree);
                 whiterecal();
                 break;
             case 'whitehighch':
                 whitethree = whitehighQualityCharacterPrice;
+                $('#whitedrawingdetails').val("$ "+whitethree);
                 whiterecal();
                 break;                                
         }
     });   
 
-
+    $("#whitestoryboard").click(function () {
+        if ($(this).is(":checked")) {
+            whitefourstory = whiteStoryboardPrice;
+            $('#whiteadditionalfeatures').val(whitefourstory);
+            whitechecked();
+            whiterecal();
+        } else {
+            whitefourstory = 0;
+            whitechecked();
+            whiterecal();
+        }
+    });
+    $("#whitevoiceover").click(function () {
+        if ($(this).is(":checked")) {
+            whitefourvoice = whiteVoiceoverPrice;
+            $('#whiteadditionalfeatures').val(whitefourvoice);
+            whitechecked();
+            whiterecal();
+        } else {
+            whitefourvoice = 0;
+            whitechecked();
+            whiterecal();
+        }
+    });
+    $("#whitesoundeffects").click(function () {
+        if ($(this).is(":checked")) {
+            whitefoursound = whiteSoundeffectsPrice;
+            $('#whiteadditionalfeatures').val(whitefoursound);
+            whitechecked();
+            whiterecal();            
+        } else {
+            whitefoursound = 0;
+            whitechecked();
+            whiterecal();
+        }
+    });
+    $("#whitemusictrack").click(function () {
+        if ($(this).is(":checked")) {
+            whitefourmusic = whiteMusictrackPrice;
+            $('#whiteadditionalfeatures').val(whitefourmusic);
+            whitechecked();
+            whiterecal();            
+        } else {
+            whitefourmusic = 0;
+            whitechecked()
+            whiterecal();
+        }
+    }); 
       // --------------3d Animation Variables-----------------
       let threedtotal = $('#threedtotal');
+      let threedtotal1 = $('#threedtotal1');
     
       let threedone = 0;
       let threedtwo = 0;
       let threedthree = 0;
+
+      let threedfourstory = 0;
+      let threedfourvoice = 0;
+      let threedfoursound = 0;
+      let threedfourmusic = 0;
       
       let threedsec = $('#threedsec');
       let threedwordCount = $('#threedwrdcnt');
@@ -333,20 +475,35 @@ $(document).ready(function(){
       let threedlowQualityAnimationPrice = 1000; 
       let threedmediumQualityAnimationPrice = 5000;
       let threedhighQualityAnimationPrice = 10000;
+      let threedfashionQualityCharacterPrice = 12000;
       
       let threedlowQualityCharacterPrice = 2000; 
       let threedmediumQualityCharacterPrice = 6000; 
       let threedhighQualityCharacterPrice = 11000;
+      
+
+      let threedStoryboardPrice = 2000; 
+    let threedVoiceoverPrice = 3000; 
+    let threedSoundeffectsPrice = 4000;    
+    let threedMusictrackPrice = 5000; 
       
       threeddurationRangeSpan.hide();
       threeddurationVoiceover.hide();
       threeddurationScript.hide();
       
       function threedrecal(){
-          let threedtotalValue = (Number(threedone) + Number(threedtwo) + Number(threedthree)).toFixed(2);
-          $('#threedtotal').val("$ "+threedtotalValue);
-          return threedtotalValue;
+        let threedtotalValue = (Number(threedone) + Number(threedtwo) + Number(threedthree) + Number(threedfourstory) + Number(threedfourvoice) + Number(threedfoursound) + Number(threedfourmusic)).toFixed(2);
+        let threedtotalValue1 = (Number(threedone) + Number(threedtwo) + Number(threedthree) + Number(threedfourstory) + Number(threedfourvoice) + Number(threedfoursound) + Number(threedfourmusic)).toFixed(2);
+        $('#threedtotal').val("$ "+threedtotalValue);
+        $('#threedtotal1').val("$ "+threedtotalValue1);
+          return threedtotalValue , threedtotalValue1;
       }
+
+      function threedchecked(){
+        let threedtotalValue = ( Number(threedfourstory) + Number(threedfourvoice) + Number(threedfoursound) + Number(threedfourmusic)).toFixed(2);
+        $('#threedadditionalfeatures').val("$ "+threedtotalValue);      
+        return threedtotalValue ;
+    }
       
           
       //-----------------
@@ -356,13 +513,18 @@ $(document).ready(function(){
               threeddurationVoiceover.hide();
               threeddurationScript.hide();
               threeddurationRangeSpan.show();
+              $('#threedduration').val(0);
               $(document).on('input', '#threedduration_range', function() {
                   threedone = 0;
                   threedrecal();
                   let threedrangeInSeconds = Number($(this).val());
+                  s3.html("");
+                    s3.html(secondsToHMS(threedrangeInSeconds));
                   threedsec.html(threedrangeInSeconds);
                   x = threedrangeInSeconds * 0.016666667;
                   threedone = x.toFixed(1);
+                  $('#threedduration').val(null);
+                $('#threedduration').val("Time: "+threedone);
                   threedrecal();
               });
           }
@@ -370,11 +532,14 @@ $(document).ready(function(){
               threeddurationRangeSpan.hide();
               threeddurationScript.hide();
               threeddurationVoiceover.show();
+              $('#threedduration').val(0);
               $(document).on('input', '#threedduration_voiceover', function(){
                   threedone = 0;
                   threedrecal();                
                   let threednum = Number(this.value);
                   threedone = ((threednum * 0.8)*0.016666667).toFixed(2);
+                  $('#threedduration').val(null);
+                  $('#threedduration').val("Time: "+threedone);
                   threedrecal();
               });
           }
@@ -382,6 +547,7 @@ $(document).ready(function(){
               threeddurationRangeSpan.hide();
               threeddurationVoiceover.hide();
               threeddurationScript.show();
+              $('#threedduration').val(0);
               $(document).on('input', '#threedduration_script', function() {
                   threedone = 0;
                   threedrecal();                
@@ -393,6 +559,8 @@ $(document).ready(function(){
                   c = (b / 60).toFixed(2);
                   threedapproxMinute.html(c);
                   threedone = (b * 0.016666667).toFixed(2);
+                  $('#threedduration').val(null);
+                  $('#threedduration').val("Time: "+threedone);
                   threedrecal();
               });
           }
@@ -402,16 +570,25 @@ $(document).ready(function(){
           switch (threedquality) {
               case 'threedlowan':
                   threedtwo = threedlowQualityAnimationPrice;
+                  $('#threedanimationstyle').val("$ "+threedtwo);
                   threedrecal();
                   break;
               case 'threedmediuman':
                   threedtwo = threedmediumQualityAnimationPrice;
+                  $('#threedanimationstyle').val("$ "+threedtwo);
                   threedrecal();
                   break;
               case 'threedhighan':
                   threedtwo = threedhighQualityAnimationPrice;
+                  $('#threedanimationstyle').val("$ "+threedtwo);
                   threedrecal();
-                  break;                                
+                  break;  
+                  case 'threedfashion':
+                    threedtwo = threedfashionQualityCharacterPrice;
+                    $('#threedanimationstyle').val("$ "+threedtwo);
+                    threedrecal();
+                    break;     
+                
           }
       });
       $('input[type=radio][name=threedcharacterquality]').change(function() {
@@ -419,18 +596,71 @@ $(document).ready(function(){
           switch (threedquality) {
               case 'threedlowch':
                   threedthree = threedlowQualityCharacterPrice;
+                  $('#threeddrawingdetails').val("$ "+threedthree);
                   threedrecal();
                   break;
               case 'threedmediumch':
                   threedthree = threedmediumQualityCharacterPrice;
+                  $('#threeddrawingdetails').val("$ "+threedthree);
                   threedrecal();
                   break;
               case 'threedhighch':
                   threedthree = threedhighQualityCharacterPrice;
+                  $('#threeddrawingdetails').val("$ "+threedthree);
                   threedrecal();
                   break;                                
           }
       });   
+
+      $("#threedstoryboard").click(function () {
+        if ($(this).is(":checked")) {
+            threedfourstory = threedStoryboardPrice;
+            $('#threedadditionalfeatures').val(threedfourstory);
+            threedchecked();
+            threedrecal();
+
+        } else {
+            threedfourstory = 0;
+            threedchecked()
+            threedrecal();
+        }
+    });
+    $("#threedvoiceover").click(function () {
+        if ($(this).is(":checked")) {
+            threedfourvoice = threedVoiceoverPrice;
+            $('#threedadditionalfeatures').val(threedfourvoice);
+            threedchecked();
+            threedrecal();
+        } else {
+            threedfourvoice = 0;
+            threedchecked()
+            threedrecal();
+        }
+    });
+    $("#threedsoundeffects").click(function () {
+        if ($(this).is(":checked")) {
+            threedfoursound = threedSoundeffectsPrice;
+            $('#threedadditionalfeatures').val(threedfoursound);
+            threedchecked();
+            threedrecal();            
+        } else {
+            threedfoursound = 0;
+            threedchecked()
+            threedrecal();
+        }
+    });
+    $("#threedmusictrack").click(function () {
+        if ($(this).is(":checked")) {
+            threedfourmusic = threedMusictrackPrice;
+            $('#threedadditionalfeatures').val(threedfourmusic);
+            threedchecked();
+            threedrecal();            
+        } else {
+            threedfourmusic = 0;
+            threedchecked()
+            threedrecal();
+        }
+    }); 
    
         $(".targetDiv").hide();
 

@@ -164,9 +164,9 @@
             <span class="flex-col">
                 <span class="flex-col width70 expduration_range_span">
                     
-                  <input id="expduration_range" name="expduration_range" type="range" min="0" max="100" step="5" value="0">
+                  <input id="expduration_range" name="expduration_range" type="range" min="0" max="1800" step="5" value="0">
                   <!-- <span class="flex duration-time pt-3">00:00:<p id="expsec">00</p></span> -->
-                  <span class="flex duration-time pt-3"><p id="s">00</p></span>
+                  <span class="flex duration-time pt-3"><p id="s1">00:00:00</p></span>
                 </span>
                 <input id="expduration_voiceover" type="number" name="expduration_voiceover" class="form-control voiceover_class">
                 <span id="expscriptspan" class="flex-col">
@@ -180,7 +180,7 @@
         </div>
         
         <div class="exp section-three padding-class">
-            <h3 class="text-center">Choose Animation Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Animation</span> Style</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
@@ -249,7 +249,7 @@
             </div>
         </div>
         <div class="exp section-four padding-class">
-            <h3 class="text-center">Choose Character Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Drawing</span> Details</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
@@ -316,7 +316,7 @@
         </div>
 
         <div class="exp section-two padding-class">
-          <h3 class="text-center">Extra Features</h3>
+          <h3 class="text-center"><span class="color-change">Additional</span> Features</h3>
           <div class="duration additional-feature" id="checkboxes">
             <span class="checkone checkboxdesign">
               <span>
@@ -363,15 +363,23 @@
             <div class="row">
               <div class="col-md-12 position-relative z-index-1 d-flex justify-content-center align-items-center total-inner padding-class flex-column">
                 <h4>Estimated Amount</h4>
-                <p>  <input type="text" name="exptotal" id="exptotal" value="0" class="form-control form-total"></p>
+                <p>  <input type="text" name="exptotal" id="exptotal1" value="0" class="form-control form-total"></p>
                 <p class="text-white">This estimate should be viewed as a rough guide only, as many factors specific to your project can affect the final cost.<br> Get in touch to discuss your specific requirements.</p>
               </div>
             </div>
           </div>
         </section>
-       
+        <p class="total-class">
+          <span class="card-header-total">Cost Estimation</span>
+          <span class="main-span"><span>Time Duration</span><input type="text" name="expdurationvalueone" id="expduration" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span>Animation Style</span><input type="text" name="expanimationstyle" id="expanimationstyle" value="0" class="form-control form-total"></span>
+           <span class="main-span"><span>Drawing Details</span><input type="text" name="expdrawingdetails" id="expdrawingdetails" value="0" class="form-control form-total"></span>
+           <span class="main-span"><span>Additional Features</span><input type="text" name="expadditionalfeatures" id="expadditionalfeatures" value="0" class="form-control form-total"></span>
+          <span class="total-amount-class">Estimated Amount <input type="text" name="exptotal" id="exptotal" value="0" class="form-control form-total"></span>
+        </p>
+    
     </div>
-    </div>
+   </div>
 
     <div class="container">
       <div class="form whiteboardform">
@@ -396,8 +404,9 @@
             <span class="flex-col">
                 <span class="flex-col width70 whiteduration_range_span">
                     
-                    <input id="whiteduration_range" name="whiteduration_range" type="range" min="0" max="100" step="5" value="0">
-                    <span class="flex duration-time pt-3">00:00:<p id="whitesec">00</p></span>
+                    <input id="whiteduration_range" name="whiteduration_range" type="range" min="0" max="1800" step="5" value="0">
+                    <span class="flex duration-time pt-3"><p id="s2">00:00:00</p></span>
+                    
                     <!-- <span class="width70 d-flex justify-content-between"><p>0 Seconds</p> <p>100 Seconds</p></span> -->
                 </span>
                 <input id="whiteduration_voiceover" type="number" name="whiteduration_voiceover" class="form-control voiceover_class">
@@ -411,12 +420,12 @@
             </span>
         </div>
         <div class="white section-two padding-class">
-            <h3 class="text-center">Choose Animation Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Animation</span> Style</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
                     <input type="radio" id="whitelowan" name="whiteanimationquality" value="whitelowan">
-                    <label for="whitelowan" class="showExample" target="7">Frame Rate 1</label>
+                    <label for="whitelowan" class="showExample" target="7">Whiteboard</label>
                 </span>
                
               </div>
@@ -424,7 +433,7 @@
                 <span>
                     <input type="radio" id="whitemediuman" name="whiteanimationquality" value="whitemediuman">
                     
-                    <label for="whitemediuman" class="showExample" target="8">Frame Rate 2</label>
+                    <label for="whitemediuman" class="showExample" target="8">2D Explainer</label>
                 </span>
                
               </div>
@@ -432,7 +441,23 @@
                 <span>
                     <input type="radio" id="whitehighan" name="whiteanimationquality" value="whitehighan">
                    
-                    <label for="whitehighan" class="showExample" target="9">Frame Rate 3 </label>
+                    <label for="whitehighan" class="showExample" target="9">Motion Graphics </label>
+                </span>
+                
+              </div>
+              <div class="label-img">
+                <span>
+                    <input type="radio" id="whitescreen" name="whiteanimationquality" value="whitescreen">
+                   
+                    <label for="whitescreen" class="showExample" target="10">Screen Cast </label>
+                </span>
+                
+              </div>
+              <div class="label-img">
+                <span>
+                    <input type="radio" id="whitelive" name="whiteanimationquality" value="whitelive">
+                   
+                    <label for="whitelive" class="showExample" target="11">Live Action </label>
                 </span>
                 
               </div>
@@ -475,36 +500,62 @@
                   </div>
                 </div> 
               </div>
+
+              <div id="div10" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+
+              <div id="div11" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div> 
+              </div>
             </div>
             
         </div>
         <div class="white section-three padding-class">
-            <h3 class="text-center">Choose Character Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Animation</span> Quality</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
                     <input type="radio" id="whitelowch" name="whitecharacterquality" value="whitelowch">
-                    <label for="whitelowch" class="showExample" target="10">Frame Rate 1 </label>
+                    <label for="whitelowch" class="showExample" target="12">Quality 1 </label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
                     <input type="radio" id="whitemediumch" name="whitecharacterquality" value="whitemediumch">
-                    <label for="whitemediumch" class="showExample" target="11">Frame Rate 2 </label>
+                    <label for="whitemediumch" class="showExample" target="13">Quality 2 </label>
                 </span>
 
               </div>
                 <div class="label-img">
                 <span>
                     <input type="radio" id="whitehighch" name="whitecharacterquality" value="whitehighch">
-                    <label for="whitehighch" class="showExample" target="12">Frame Rate 2 </label>
+                    <label for="whitehighch" class="showExample" target="14">Quality 3 </label>
                 </span>
                 
               </div>
             </div>
             <div class="container showexamplediv">
-              <div id="div10 " class="targetDiv">
+              <div id="div12" class="targetDiv">
               <div class="container ">
                 <div class="col-md-10 m-auto">
                   <div class="video">
@@ -517,7 +568,7 @@
               </div>
                
               </div>
-              <div id="div11" class="targetDiv">
+              <div id="div13" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -529,7 +580,7 @@
                   </div>
                 </div>
               </div>
-              <div id="div12" class="targetDiv">
+              <div id="div14" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -543,19 +594,67 @@
               </div>
             </div>
         </div>
+        <div class="exp section-two padding-class">
+          <h3 class="text-center"><span class="color-change">Additional</span> Features</h3>
+          <div class="duration additional-feature" id="checkboxes">
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/description.png" alt="">
+              <label for="whitestoryboard">StoryBoard</label>
+            </span>
+              <input type="checkbox" name="whitestoryboard" id="whitestoryboard">
+              
+            </span>
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/record_voice_over.png" alt="">
+             <label for="whitevoiceover">Voicover</label>
+            </span>
+              <input type="checkbox" name="whitevoiceover" id="whitevoiceover">
+              
+              </span>
+
+              <span class="checkone checkboxdesign">
+                <span>
+                  <img src="assets/images/checkbox-icons/music_note.png" alt="">
+                <label for="whitesoundeffects">Music</label>
+                  </span>
+                <input type="checkbox" name="whitesoundeffects" id="whitesoundeffects">
+                
+              </span>
+              
+
+              <span class="checkone checkboxdesign">
+                <span>
+                  <img src="assets/images/checkbox-icons/graphic_eq.png" alt="">
+                <label for="whitemusictrack">SFX</label>
+              </span> 
+                <input type="checkbox" name="whitemusictrack" id="whitemusictrack">
+              
+              </span>
+             
+          </div>
+      </div>
         <section class="total-particle">
-          <!-- <div id="particle"></div> -->
+           <!-- <div id="particle"></div> -->
           <div class="container">
             <div class="row">
               <div class="col-md-12 position-relative z-index-1 d-flex justify-content-center align-items-center total-inner padding-class flex-column">
                 <h4>Estimated Amount</h4>
-                <p> <input type="text" name="whitetotal" id="whitetotal" value="0" class="form-control form-total"></p>
+                <p> <input type="text" name="whitetotal" id="whitetotal1" value="0" class="form-control form-total"></p>
                 <p class="text-white">This estimate should be viewed as a rough guide only, as many factors specific to your project can affect the final cost.<br> Get in touch to discuss your specific requirements.</p>
               </div>
             </div>
           </div>
-        </section>
-        
+        </section> 
+           <p class="total-class">
+            <span class="card-header-total">Cost Estimation</span>
+            <span class="main-span"><span>Time Duration</span><input type="text" name="whitedurationvalueone" id="whiteduration" value="0" class="form-control form-total"></span>
+            <span class="main-span"><span>Animation Style</span><input type="text" name="whiteanimationstyle" id="whiteanimationstyle" value="0" class="form-control form-total"></span>
+             <span class="main-span"><span>Animation Quality</span><input type="text" name="whitedrawingdetails" id="whitedrawingdetails" value="0" class="form-control form-total"></span>
+             <span class="main-span"><span>Additional Features</span><input type="text" name="whiteadditionalfeatures" id="whiteadditionalfeatures" value="0" class="form-control form-total"></span>
+            <span class="total-amount-class"> Estimated Amount <input type="text" name="whitetotal" id="whitetotal" value="0" class="form-control form-total"></span>
+          </p>
     </div> 
     </div>
 
@@ -582,8 +681,8 @@
             <span class="flex-col">
                 <span class="flex-col width70 threedduration_range_span">
                     
-                    <input id="threedduration_range" name="threedduration_range" type="range" min="0" max="100" step="5" value="0">
-                    <span class="flex duration-time pt-3">00:00:<p id="threedsec">00</p></span>
+                    <input id="threedduration_range" name="threedduration_range" type="range" min="0" max="1800" step="5" value="0">
+                    <span class="flex duration-time pt-3"><p id="s3">00:00:00</p></span>
                     <!-- <span class="width70 d-flex justify-content-between"><p>0 Seconds</p> <p>100 Seconds</p></span> -->
                 </span>
                 <input id="threedduration_voiceover" type="number" name="threedduration_voiceover" class="form-control voiceover_class">
@@ -597,12 +696,12 @@
             </span>
         </div>
         <div class="white section-two padding-class">
-            <h3 class="text-center">Choose Animation Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Animation</span> Type</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
                     <input type="radio" id="threedlowan" name="threedanimationquality" value="threedlowan">
-                    <label for="threedlowan" class="showExample" target="13">Frame Rate 1</label>
+                    <label for="threedlowan" class="showExample" target="15">Cartoon</label>
                 </span>
                
               </div>
@@ -610,7 +709,7 @@
                 <span>
                     <input type="radio" id="threedmediuman" name="threedanimationquality" value="threedmediuman">
                     
-                    <label for="threedmediuman" class="showExample" target="14">Frame Rate 2</label>
+                    <label for="threedmediuman" class="showExample" target="16">Product</label>
                 </span>
                
               </div>
@@ -618,13 +717,21 @@
                 <span>
                     <input type="radio" id="threedhighan" name="threedanimationquality" value="threedhighan">
                    
-                    <label for="threedhighan" class="showExample" target="15">Frame Rate 3 </label>
+                    <label for="threedhighan" class="showExample" target="17">Architecture </label>
+                </span>
+                
+              </div>
+              <div class="label-img">
+                <span>
+                    <input type="radio" id="threedfashion" name="threedanimationquality" value="threedfashion">
+                   
+                    <label for="threedfashion" class="showExample" target="18">Fashion </label>
                 </span>
                 
               </div>
             </div>
             <div class="container showexamplediv">
-              <div id="div13" class="targetDiv">
+              <div id="div15" class="targetDiv">
               <div class="container ">
                 <div class="col-md-10 m-auto">
                   <div class="video">
@@ -637,7 +744,7 @@
               </div>
                
               </div>
-              <div id="div14" class="targetDiv">
+              <div id="div16" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -649,7 +756,19 @@
                   </div>
                 </div>
               </div>
-              <div id="div15" class="targetDiv">
+              <div id="div17" class="targetDiv">
+                <div class="container ">
+                  <div class="col-md-10 m-auto">
+                    <div class="video">
+                      
+                     <img src="assets/images/gif-2.gif" data-video="https://www.youtube.com/embed/use0UvzOq5I" title="Play Video" class="video__placeholder" />
+                      
+                      <svg class="video__button" xmlns="http://www.w3.org/2000/svg" width="208" height="208" viewBox="0 0 208 208" fill="none"><circle cx="103.961" cy="104.245" r="103.5" fill="white" fill-opacity="0.25"></circle><circle cx="103.961" cy="104.245" r="70.5" fill="white" fill-opacity="0.25"></circle><path d="M134.98 110.286L115.7 121.815L113.603 122.996L94.1095 134.065C90.6725 136.021 86.4436 133.519 86.461 129.588L86.4958 126.662L86.5132 123.277L86.8482 79.8277C86.8656 75.8964 91.1489 73.4641 94.5511 75.4548L109.391 84.1615L109.498 84.2137L111.947 85.6583V85.6757L135.052 99.8824C138.293 102.23 138.258 108.01 134.98 110.286Z" fill="url(#paint0_linear_150_88)"></path><defs><linearGradient id="paint0_linear_150_88" x1="78.3023" y1="112.072" x2="150.848" y2="72.5939" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4818"></stop><stop offset="1" stop-color="#FFBC38"></stop></linearGradient></defs></svg>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div id="div18" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -665,32 +784,32 @@
             
         </div>
         <div class="white section-three padding-class">
-            <h3 class="text-center">Choose Character Quality Any (1 of 3)*</h3>
+            <h3 class="text-center"><span class="color-change">Animation</span> Quality</h3>
             <div class="duration">
               <div class="label-img">
                 <span>
                     <input type="radio" id="threedlowch" name="threedcharacterquality" value="threedlowch">
-                    <label for="threedlowch" class="showExample" target="16">Frame Rate 1 </label>
+                    <label for="threedlowch" class="showExample" target="19">Quality 1 </label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
                     <input type="radio" id="threedmediumch" name="threedcharacterquality" value="threedmediumch">
-                    <label for="threedmediumch" class="showExample" target="17">Frame Rate 2 </label>
+                    <label for="threedmediumch" class="showExample" target="20">Quality 2 </label>
                 </span>
 
               </div>
                 <div class="label-img">
                 <span>
                     <input type="radio" id="threedhighch" name="threedcharacterquality" value="threedhighch">
-                    <label for="threedhighch" class="showExample" target="18">Frame Rate 2 </label>
+                    <label for="threedhighch" class="showExample" target="21">Quality 3 </label>
                 </span>
                 
               </div>
             </div>
             <div class="container showexamplediv">
-              <div id="div16" class="targetDiv">
+              <div id="div19" class="targetDiv">
               <div class="container ">
                 <div class="col-md-10 m-auto">
                   <div class="video">
@@ -703,7 +822,7 @@
               </div>
                
               </div>
-              <div id="div17" class="targetDiv">
+              <div id="div20" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -715,7 +834,7 @@
                   </div>
                 </div>
               </div>
-              <div id="div18" class="targetDiv">
+              <div id="div21" class="targetDiv">
                 <div class="container ">
                   <div class="col-md-10 m-auto">
                     <div class="video">
@@ -729,19 +848,113 @@
               </div>
             </div>
         </div>
-        <section class="total-particle">
-          <!-- <div id="particle"></div> -->
+
+        <div class="white section-two padding-class">
+          
+          <div class="duration additional-feature additional-numbers" id="checkboxes">
+            <div class="animation-extra">
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/supervisor_account.png" alt="">
+              <label for="threedcharacters">Number of <span class="color-change">Characters</span></label>
+            </span>
+              
+              
+            </span>
+            <input type="number" name="threedcharacters" id="threedcharacters" placeholder="Place your numbers here...">
+          </div>
+
+          <div class="animation-extra">
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/styler.png" alt="">
+             <label for="threeddresses">Number of <span class="color-change">Custom Dresses</label>
+            </span>
+             </span>
+              <input type="number" name="threeddresses" id="threeddresses" placeholder="Place your numbers here...">
+              </div>
+
+              <div class="animation-extra">
+              <span class="checkone checkboxdesign">
+                <span>
+                  <img src="assets/images/checkbox-icons/map.png" alt="">
+                <label for="threedenvironment">Number of <span class="color-change">Environment</span></label>
+                  </span>
+                
+                
+              </span>
+              <input type="number" name="threedenvironment" id="threedenvironment" placeholder="Place your numbers here...">
+              </div>
+              
+
+            
+             
+          </div>
+      </div>
+
+
+        <div class="white section-two padding-class">
+          <h3 class="text-center"><span class="color-change">Additional</span> Features</h3>
+          <div class="duration additional-feature" id="checkboxes">
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/description.png" alt="">
+              <label for="threedstoryboard">StoryBoard</label>
+            </span>
+              <input type="checkbox" name="threedstoryboard" id="threedstoryboard">
+              
+            </span>
+            <span class="checkone checkboxdesign">
+              <span>
+                <img src="assets/images/checkbox-icons/record_voice_over.png" alt="">
+             <label for="threedvoiceover">Voicover</label>
+            </span>
+              <input type="checkbox" name="threedvoiceover" id="threedvoiceover">
+              
+              </span>
+
+              <span class="checkone checkboxdesign">
+                <span>
+                  <img src="assets/images/checkbox-icons/music_note.png" alt="">
+                <label for="threedsoundeffects">Music</label>
+                  </span>
+                <input type="checkbox" name="threedsoundeffects" id="threedsoundeffects">
+                
+              </span>
+              
+
+              <span class="checkone checkboxdesign">
+                <span>
+                  <img src="assets/images/checkbox-icons/graphic_eq.png" alt="">
+                <label for="threedmusictrack">SFX</label>
+              </span> 
+                <input type="checkbox" name="threedmusictrack" id="threedmusictrack">
+              
+              </span>
+             
+          </div>
+      </div>
+         <section class="total-particle">
+         <!-- <div id="particle"></div>  -->
           <div class="container">
             <div class="row">
               <div class="col-md-12 position-relative z-index-1 d-flex justify-content-center align-items-center total-inner padding-class flex-column">
                 <h4>Estimated Amount</h4>
-                <p> <input type="text" name="threedtotal" id="threedtotal" value="0" class="form-control form-total"></p>
+                <p> <input type="text" name="threedtotal" id="threedtotal1" value="0" class="form-control form-total"></p>
                 <p class="text-white">This estimate should be viewed as a rough guide only, as many factors specific to your project can affect the final cost.<br> Get in touch to discuss your specific requirements.</p>
               </div>
             </div>
           </div>
-        </section>
-        
+        </section> 
+
+        <p class="total-class">
+          <span class="card-header-total">Cost Estimation</span>
+          <span class="main-span"><span>Time Duration</span><input type="text" name="threeddurationvalueone" id="threedduration" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span> Type</span><input type="text" name="threedanimationstyle" id="threedanimationstyle" value="0" class="form-control form-total"></span>
+           <span class="main-span"><span>Animation Quality</span><input type="text" name="threeddrawingdetails" id="threeddrawingdetails" value="0" class="form-control form-total"></span>
+           <span class="main-span"><span>Additional Features</span><input type="text" name="threedadditionalfeatures" id="threedadditionalfeatures" value="0" class="form-control form-total"></span>
+          <span class="total-amount-class">Estimated Amount <input type="text" name="threedtotal" id="threedtotal" value="0" class="form-control form-total"></span>
+          </p>
     </div> 
     </div>
 
@@ -903,7 +1116,7 @@
                 <div id="animation" class="option-target hidden " >
                   <select name=" " id=" " class=" form-select bg-dark text-white" aria-invalid=" ">
                     <option value="Select Any">Select Any Option</option>
-                    <option value="Explainer Video">Explainer Video</option>
+                    <option valuewhitelainer Video">Explainer Video</option>
                     <option value="Whiteboard">Whiteboard</option>
                     <option value="Motion Graphics">Motion Graphics</option>
                     <option value="2D Animation">2D Animation</option>

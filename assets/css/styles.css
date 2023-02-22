@@ -42,6 +42,80 @@ html {
   cursor: pointer;
   z-index: 90;
 }
+footer {
+  position: relative;
+}
+.color-change{
+  color: #ff7b00;
+}
+.animation-extra {
+  width: 100%;
+}
+.animation-extra .checkboxdesign {
+  width: auto !important;
+  height: unset !important;
+  background: transparent !important;
+}
+.animation-extra span.checkboxdesign span {
+  width: 100%;
+  display: inline !important;
+  text-align: initial !important;
+  padding-left: 0;
+}
+.animation-extra span.checkboxdesign span label{
+  display: contents;
+  font-size: 16px !important;
+}
+p.total-class {
+  color: #ff7b00;
+  text-align: center;
+ 
+}
+.total-class input{
+  border: none !important;
+  margin: 0;
+  pointer-events: none;
+  text-align: right;
+  font-size: 14px;
+}
+p.total-class span.main-span span{
+  font-size: 14px;
+  padding-left: 5px;
+  text-align: left;
+}
+span.total-amount-class * {
+  text-align: center !important;
+}
+span.total-amount-class{
+  margin-bottom: 10px;
+}
+span.total-amount-class input{
+  font-size: 16px;
+}
+.total-class {
+  position: fixed ;
+  right: 0;
+  bottom: 10%;
+  width: 200px;
+  border: none !important;
+  margin: 0;
+  box-shadow: 0 0 50px #0000004f;
+  border-radius: 5px !important;
+  background: white !important;
+  padding: 0px;
+  display: block;
+  z-index: 100;
+}
+p.total-class span.main-span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccd0df !important;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+
 .border-duration input[type=radio]::before {
   content: '';
   position: absolute;
@@ -66,10 +140,26 @@ html {
   position: relative;
 }
 .additional-feature img{
+  width: 18px;
   filter: grayscale(1);
+  object-fit: contain;
+  height: 13px;
 }
 .duration .label-img span label:hover {
   background: #f7f3f9;
+}
+.animation-extra span.checkboxdesign + span{
+  margin-left: -5px !important;
+}
+.animation-extra input[type=number]:focus{
+  outline: #BFC3C8;
+}
+.animation-extra input[type=number] {
+  background: rgba(255, 123, 0, 0.05);
+  border-radius: 5px;
+  padding: 15px;
+  border: none;
+  font-size: 14px;
 }
 .border-duration + span.flex-col {
   padding-top: 50px;
@@ -191,14 +281,14 @@ html {
   color: #7E7E7E;
 } */
 .whiteduration_range_span * , .expduration_range_span * , .threedduration_range_span *{
-
 font-size: 35px;
 font-weight: 400;
 line-height: 27px;
 letter-spacing: 0.1em;
 text-align: center;
-
 }
+
+
 .paste_script {
   background: #0000000a;
   border: 0;
@@ -238,7 +328,7 @@ input[type=range] {
   -webkit-appearance: none;
  appearance: none;
  width: auto;
- height: 12px;
+ height: 8px;
  border-radius: 10px;
  background-color: #5F0A87  ;
 }
@@ -267,7 +357,10 @@ svg path {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background: white;
+  box-shadow: 0 0 20px #0000001f;
 }
 .section-four div#checkboxes * {
   margin: 0 5px;
@@ -275,6 +368,7 @@ header {
 input[type=checkbox] {
   height: 15px;
   width: 15px;
+  
 }
 input[type=checkbox]:checked {
   accent-color: #000;
@@ -316,7 +410,7 @@ input[type=checkbox]:checked {
 }
 .section-one h3 , .section-two h3, .section-three h3, .section-four h3{ 
   font-family: Poppins;
-font-size: 25px;
+font-size: 22px;
 font-weight: 500;
 line-height: 25px;
 letter-spacing: 0.02em;
@@ -362,8 +456,20 @@ border-radius: 5px;
   margin: 10px 0px 10px 0px;
 
 }
+span.card-header-total {
+  display: block;
+  width: 100%;
+  background: #030E4C;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
 .total-particle{
   position: relative;
+  /* display: none; */
    }
      .total-particle p , .total-particle h4 {
         margin: 0;
@@ -452,7 +558,7 @@ input[type=radio]{
   opacity: 0;
 }
 .border-duration span label {
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1em;
   color: #030E4C;
   letter-spacing: 0.02em;
