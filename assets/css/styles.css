@@ -44,6 +44,7 @@ html {
 }
 footer {
   position: relative;
+  z-index: 100;
 }
 .color-change{
   color: #ff7b00;
@@ -76,7 +77,7 @@ p.total-class {
   margin: 0;
   pointer-events: none;
   text-align: right;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0;
   padding-right: 5px;
 }
@@ -84,9 +85,19 @@ p.total-class span.withlabel {
   text-align: right !important;
   padding-right: 5px;
 }
-p.total-class span.main-span span#showcount {
+p.total-class span.main-span span.additiona-features-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+p.total-class span.main-span .withlabel span {
   font-size: 10px;
   color: #030e4c;
+}
+.border-duration span label span {
+  padding: 5px;
 }
 p.total-class span.total-amount-class {
   margin: 5px 0 !important;
@@ -106,6 +117,14 @@ span.total-amount-class{
 span.total-amount-class input{
   font-size: 16px;
 }
+p.total-class span.main-span span.additiona-features-inner span {
+  font-size: 10px !important;
+  color: #030e4c;
+  line-height: 1.2em;
+}
+.total-class .withlabel input{
+  margin-bottom: -5px;
+}
 .total-class {
   position: fixed ;
   right: 0;
@@ -119,6 +138,7 @@ span.total-amount-class input{
   padding: 0px;
   display: block;
   z-index: 100;
+  right: 0.5%;
 }
 p.total-class span.main-span {
   display: flex;
@@ -304,7 +324,7 @@ text-align: center;
 
 
 .paste_script {
-  background: #0000000a;
+  background: #fefefe;
   border: 0;
   width: 100%;
   border-bottom: 1px solid #5F0A87;
@@ -338,11 +358,29 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
 
 }
+input.voiceover_class{
+  background: #fefefe;
+  padding: 10px;
+}
+.voiceover_class::-webkit-input-placeholder {
+  color: #1E1E1E !important;
+  font-size: 14px !important;
+}
+.voiceover_class::-moz-placeholder {
+  color: #1E1E1E !important;
+  font-size: 14px !important;
+
+}
+.voiceover_class::-moz-placeholder {
+  color: #1E1E1E !important;
+  font-size: 14px !important;
+
+}
 input[type=range] {
   -webkit-appearance: none;
  appearance: none;
  width: auto;
- height: 8px;
+ height: 5px;
  border-radius: 10px;
  background-color: #5F0A87  ;
 }
@@ -577,6 +615,10 @@ input[type=radio]{
   color: #030E4C;
   letter-spacing: 0.02em;
   margin-left: 15px;
+  display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .border-duration{
   padding: 0;

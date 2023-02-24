@@ -149,15 +149,15 @@
             <div class="duration border-duration">
                 <span>
                     <input type="radio" id="expp1" name="expdurationcount" value="expalpha" alt="Enter Duration">
-                    <label for="expp1">Enter Duration</label>
+                    <label for="expp1"><span class="color-change">Enter</span> Duration</label>
                 </span>
                 <span>
                     <input type="radio" id="expp2" name="expdurationcount" value="expbeta" alt="Voiceover Word Count">
-                    <label for="expp2">Voiceover Word Count</label>
+                    <label for="expp2"><span class="color-change">Voiceover</span> Word Count</label>
                 </span>
                 <span>
                     <input type="radio" id="expp3" name="expdurationcount" value="expgamma" alt="Paste Script">
-                    <label for="expp3">Paste Script</label>
+                    <label for="expp3"><span class="color-change">Paste</span> Script</label>
                 </span>
             </div>
           
@@ -168,7 +168,8 @@
                   <!-- <span class="flex duration-time pt-3">00:00:<p id="expsec">00</p></span> -->
                   <span class="flex duration-time pt-3"><p id="s1">00:00:00</p></span>
                 </span>
-                <input id="expduration_voiceover" type="number" name="expduration_voiceover" class="form-control voiceover_class">
+                
+                <input id="expduration_voiceover" type="number" name="expduration_voiceover" class="form-control voiceover_class" placeholder="20 (words)">
                 <span id="expscriptspan" class="flex-col">
                     <textarea class="paste_script" id="expduration_script" name="expduration_script" rows="5" class="form-control" placeholder="Paste Your Script"></textarea>
                     <span class="d-flex width100 col-gap-10 justify-content-start">
@@ -184,7 +185,7 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="explowan" name="expanimationquality" value="explowan">
+                    <input type="radio" id="explowan" name="expanimationquality" value="explowan" alt="Frame Rate 1">
                     <label for="explowan" class="showExample" target="1">Frame Rate 1 </label>
                 
                 </span>
@@ -192,7 +193,7 @@
               </div>
               <div class="label-img">
                 <span>
-                    <input type="radio" id="expmediuman" name="expanimationquality" value="expmediuman">
+                    <input type="radio" id="expmediuman" name="expanimationquality" value="expmediuman" alt="Frame Rate 2">
                     <label for="expmediuman" class="showExample" target="2">Frame Rate 2 </label>
                    
                 </span>
@@ -200,7 +201,7 @@
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="exphighan" name="expanimationquality" value="exphighan">
+                    <input type="radio" id="exphighan" name="expanimationquality" value="exphighan" alt="Frame Rate 3">
                     <label for="exphighan" class="showExample" target="3">Frame Rate 3</label>
                   
                 </span>
@@ -253,21 +254,21 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="explowch" name="expcharacterquality" value="explowch">
+                    <input type="radio" id="explowch" name="expcharacterquality" value="explowch" alt="Quality 1">
                     <label for="explowch" class="showExample" target="4">Quality 1</label>
                 </span>
               
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="expmediumch" name="expcharacterquality" value="expmediumch">
+                    <input type="radio" id="expmediumch" name="expcharacterquality" value="expmediumch" alt="Quality 2">
                     <label for="expmediumch" class="showExample" target="5">Quality 2</label>
                 </span>
                 
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="exphighch" name="expcharacterquality" value="exphighch">
+                    <input type="radio" id="exphighch" name="expcharacterquality" value="exphighch" alt="Quality 3">
                     <label for="exphighch" class="showExample" target="6">Quality 3</label>
                 </span>
                
@@ -323,7 +324,7 @@
                 <img src="assets/images/checkbox-icons/description.png" alt="">
               <label for="expstoryboard">StoryBoard</label>
             </span>
-              <input type="checkbox" name="expstoryboard" id="expstoryboard">
+              <input type="checkbox" name="expstoryboard" id="expstoryboard" value="StoryBoard">
               
             </span>
             <span class="checkone checkboxdesign">
@@ -331,7 +332,7 @@
                 <img src="assets/images/checkbox-icons/record_voice_over.png" alt="">
              <label for="expvoiceover">Voicover</label>
             </span>
-              <input type="checkbox" name="expvoiceover" id="expvoiceover">
+              <input type="checkbox" name="expvoiceover" id="expvoiceover" value="Voiceover">
               
               </span>
 
@@ -340,7 +341,7 @@
                   <img src="assets/images/checkbox-icons/music_note.png" alt="">
                 <label for="expsoundeffects">Music</label>
                   </span>
-                <input type="checkbox" name="expsoundeffects" id="expsoundeffects">
+                <input type="checkbox" name="expsoundeffects" id="expsoundeffects" value="Music">
                 
               </span>
               
@@ -350,7 +351,7 @@
                   <img src="assets/images/checkbox-icons/graphic_eq.png" alt="">
                 <label for="expmusictrack">SFX</label>
               </span> 
-                <input type="checkbox" name="expmusictrack" id="expmusictrack">
+                <input type="checkbox" name="expmusictrack" id="expmusictrack" value="SFX">
               
               </span>
              
@@ -374,12 +375,33 @@
           <span class="main-span"><span>Time Duration</span>
 
          <span class="withlabel">
-         <input type="text" name="expdurationvalueone" id="expduration" value="0" class="form-control form-total"> <span id="showcount">Enter Duration</span>
+         <input type="text" name="expdurationvalueone" id="expduration" value="0" class="form-control form-total"> <span id="showduration">Enter Duration</span>
         </span>
         </span>
-          <span class="main-span"><span>Animation Style</span><input type="text" name="expanimationstyle" id="expanimationstyle" value="0" class="form-control form-total"></span>
-           <span class="main-span"><span>Drawing Details</span><input type="text" name="expdrawingdetails" id="expdrawingdetails" value="0" class="form-control form-total"></span>
-           <span class="main-span"><span>Additional Features</span><input type="text" name="expadditionalfeatures" id="expadditionalfeatures" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span>Animation Style</span>
+          <span class="withlabel">
+          <input type="text" name="expanimationstyle" id="expanimationstyle" value="0" class="form-control form-total">
+          <span id="showanimestyle">Frame Rate 1</span>
+        </span>
+      </span>
+           <span class="main-span"><span>Drawing Details</span>
+           <span class="withlabel">
+           <input type="text" name="expdrawingdetails" id="expdrawingdetails" value="0" class="form-control form-total">
+            <span id="showdrawingquality">Quality 1</span>
+          </span>
+        </span>
+           <span class="main-span"><span>Additional Features</span>
+           <span class="withlabel">
+            <span class="additiona-features-inner">
+              <span id="showfeaturesone"> </span>
+              <span id="showfeaturestwo"> </span>
+              <span id="showfeaturesthree"> </span>
+              <span id="showfeaturesfour"> </span>
+             </span>
+           <input type="text" name="expadditionalfeatures" id="expadditionalfeatures" value="0" class="form-control form-total">
+          
+          </span>            
+          </span>
           <span class="total-amount-class">Estimated Amount <input type="text" name="exptotal" id="exptotal" value="0" class="form-control form-total"></span>
         </p>
     
@@ -392,16 +414,16 @@
             <!-- <h3 class="text-center">Whiteboard</h3> -->
             <div class="duration border-duration">
                 <span>
-                    <input type="radio" id="p1" name="whitedurationcount" value="whitealpha">
-                    <label for="p1">Enter Duration</label>
+                    <input type="radio" id="p1" name="whitedurationcount" value="whitealpha" alt="Enter Duration">
+                    <label for="p1"><span class="color-change">Enter</span> Duration</label>
                 </span>
                 <span>
-                    <input type="radio" id="p2" name="whitedurationcount" value="whitebeta">
-                    <label for="p2">Voiceover Word Count</label>
+                    <input type="radio" id="p2" name="whitedurationcount" value="whitebeta" alt="Voiceover Word Count">
+                    <label for="p2"><span class="color-change">Voiceover</span> Word Count</label>
                 </span>
                 <span>
-                    <input type="radio" id="p3" name="whitedurationcount" value="whitegamma">
-                    <label for="p3">Paste Script</label>
+                    <input type="radio" id="p3" name="whitedurationcount" value="whitegamma" alt="Paste Script">
+                    <label for="p3"><span class="color-change">Paste</span> Script</label>
                 </span>
             </div>
             <br>
@@ -414,7 +436,7 @@
                     
                     <!-- <span class="width70 d-flex justify-content-between"><p>0 Seconds</p> <p>100 Seconds</p></span> -->
                 </span>
-                <input id="whiteduration_voiceover" type="number" name="whiteduration_voiceover" class="form-control voiceover_class">
+                <input id="whiteduration_voiceover" type="number" name="whiteduration_voiceover" class="form-control voiceover_class" placeholder="20 (words)">
                 <span id="whitescriptspan" class="flex-col">
                     <textarea class="paste_script" id="whiteduration_script" name="whiteduration_script" rows="5" class="form-control" placeholder="Paste Your Script"></textarea>
                     <span class="d-flex width100 col-gap-10 justify-content-start">
@@ -429,14 +451,14 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="whitelowan" name="whiteanimationquality" value="whitelowan">
+                    <input type="radio" id="whitelowan" name="whiteanimationquality" value="whitelowan" alt="Whiteboard">
                     <label for="whitelowan" class="showExample" target="7">Whiteboard</label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="whitemediuman" name="whiteanimationquality" value="whitemediuman">
+                    <input type="radio" id="whitemediuman" name="whiteanimationquality" value="whitemediuman" alt="2D Explainer">
                     
                     <label for="whitemediuman" class="showExample" target="8">2D Explainer</label>
                 </span>
@@ -444,7 +466,7 @@
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="whitehighan" name="whiteanimationquality" value="whitehighan">
+                    <input type="radio" id="whitehighan" name="whiteanimationquality" value="whitehighan" alt="Motion Graphic">
                    
                     <label for="whitehighan" class="showExample" target="9">Motion Graphics </label>
                 </span>
@@ -452,7 +474,7 @@
               </div>
               <div class="label-img">
                 <span>
-                    <input type="radio" id="whitescreen" name="whiteanimationquality" value="whitescreen">
+                    <input type="radio" id="whitescreen" name="whiteanimationquality" value="whitescreen" alt="Screen Cast">
                    
                     <label for="whitescreen" class="showExample" target="10">Screen Cast </label>
                 </span>
@@ -460,7 +482,7 @@
               </div>
               <div class="label-img">
                 <span>
-                    <input type="radio" id="whitelive" name="whiteanimationquality" value="whitelive">
+                    <input type="radio" id="whitelive" name="whiteanimationquality" value="whitelive" alt="Live Action">
                    
                     <label for="whitelive" class="showExample" target="11">Live Action </label>
                 </span>
@@ -539,21 +561,21 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="whitelowch" name="whitecharacterquality" value="whitelowch">
+                    <input type="radio" id="whitelowch" name="whitecharacterquality" value="whitelowch" alt="Quality 1">
                     <label for="whitelowch" class="showExample" target="12">Quality 1 </label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="whitemediumch" name="whitecharacterquality" value="whitemediumch">
+                    <input type="radio" id="whitemediumch" name="whitecharacterquality" value="whitemediumch" alt="Quality 2">
                     <label for="whitemediumch" class="showExample" target="13">Quality 2 </label>
                 </span>
 
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="whitehighch" name="whitecharacterquality" value="whitehighch">
+                    <input type="radio" id="whitehighch" name="whitecharacterquality" value="whitehighch" alt="Quality 3">
                     <label for="whitehighch" class="showExample" target="14">Quality 3 </label>
                 </span>
                 
@@ -607,7 +629,7 @@
                 <img src="assets/images/checkbox-icons/description.png" alt="">
               <label for="whitestoryboard">StoryBoard</label>
             </span>
-              <input type="checkbox" name="whitestoryboard" id="whitestoryboard">
+              <input type="checkbox" name="whitestoryboard" id="whitestoryboard" value="Storyboard">
               
             </span>
             <span class="checkone checkboxdesign">
@@ -615,7 +637,7 @@
                 <img src="assets/images/checkbox-icons/record_voice_over.png" alt="">
              <label for="whitevoiceover">Voicover</label>
             </span>
-              <input type="checkbox" name="whitevoiceover" id="whitevoiceover">
+              <input type="checkbox" name="whitevoiceover" id="whitevoiceover" value="Voiceover">
               
               </span>
 
@@ -624,7 +646,7 @@
                   <img src="assets/images/checkbox-icons/music_note.png" alt="">
                 <label for="whitesoundeffects">Music</label>
                   </span>
-                <input type="checkbox" name="whitesoundeffects" id="whitesoundeffects">
+                <input type="checkbox" name="whitesoundeffects" id="whitesoundeffects" value="Music">
                 
               </span>
               
@@ -634,7 +656,7 @@
                   <img src="assets/images/checkbox-icons/graphic_eq.png" alt="">
                 <label for="whitemusictrack">SFX</label>
               </span> 
-                <input type="checkbox" name="whitemusictrack" id="whitemusictrack">
+                <input type="checkbox" name="whitemusictrack" id="whitemusictrack" value="SFX">
               
               </span>
              
@@ -654,10 +676,36 @@
         </section> 
            <p class="total-class">
             <span class="card-header-total">Cost Estimation</span>
-            <span class="main-span"><span>Time Duration</span><input type="text" name="whitedurationvalueone" id="whiteduration" value="0" class="form-control form-total"></span>
-            <span class="main-span"><span>Animation Style</span><input type="text" name="whiteanimationstyle" id="whiteanimationstyle" value="0" class="form-control form-total"></span>
-             <span class="main-span"><span>Animation Quality</span><input type="text" name="whitedrawingdetails" id="whitedrawingdetails" value="0" class="form-control form-total"></span>
-             <span class="main-span"><span>Additional Features</span><input type="text" name="whiteadditionalfeatures" id="whiteadditionalfeatures" value="0" class="form-control form-total"></span>
+            <span class="main-span"><span>Time Duration</span>
+            <span class="withlabel">            
+            <input type="text" name="whitedurationvalueone" id="whiteduration" value="0" class="form-control form-total">
+            <span id="showwhitecount">Enter Duration</span>
+            </span>
+          </span>
+            <span class="main-span"><span>Animation Style</span>
+            <span class="withlabel"> 
+            <input type="text" name="whiteanimationstyle" id="whiteanimationstyle" value="0" class="form-control form-total">
+            <span id="showwhiteanimestyle">Whiteboard</span>
+          </span>
+          </span>
+             <span class="main-span"><span>Animation Quality</span>
+             <span class="withlabel"> 
+             <input type="text" name="whitedrawingdetails" id="whitedrawingdetails" value="0" class="form-control form-total">
+             <span id="showwhitedrawingdetails">Quality 1</span>
+            </span>
+            </span>
+
+             <span class="main-span"><span>Additional Features</span>
+             <span class="withlabel">
+              <span class="additiona-features-inner">
+                <span id="showwhitefeaturesone"> </span>
+                <span id="showwhitefeaturestwo"> </span>
+                <span id="showwhitefeaturesthree"> </span>
+                <span id="showwhitefeaturesfour"> </span>
+               </span>
+             <input type="text" name="whiteadditionalfeatures" id="whiteadditionalfeatures" value="0" class="form-control form-total">
+              </span>
+            </span>
             <span class="total-amount-class"> Estimated Amount <input type="text" name="whitetotal" id="whitetotal" value="0" class="form-control form-total"></span>
           </p>
     </div> 
@@ -669,16 +717,16 @@
             <!-- <h3 class="text-center">Whiteboard</h3> -->
             <div class="duration border-duration">
                 <span>
-                    <input type="radio" id="t1" name="threeddurationcount" value="threedalpha">
-                    <label for="t1">Enter Duration</label>
+                    <input type="radio" id="t1" name="threeddurationcount" value="threedalpha" alt="Enter Duration">
+                    <label for="t1"><span class="color-change">Enter</span> Duration</label>
                 </span>
                 <span>
-                    <input type="radio" id="t2" name="threeddurationcount" value="threedbeta">
-                    <label for="t2">Voiceover Word Count</label>
+                    <input type="radio" id="t2" name="threeddurationcount" value="threedbeta" alt="Voiceover Word Count">
+                    <label for="t2"><span class="color-change">Voiceover</span> Word Count</label>
                 </span>
                 <span>
-                    <input type="radio" id="t3" name="threeddurationcount" value="threedgamma">
-                    <label for="t3">Paste Script</label>
+                    <input type="radio" id="t3" name="threeddurationcount" value="threedgamma" alt="Paster Script">
+                    <label for="t3"><span class="color-change">Paste</span> Script</label>
                 </span>
             </div>
             <br>
@@ -690,7 +738,7 @@
                     <span class="flex duration-time pt-3"><p id="s3">00:00:00</p></span>
                     <!-- <span class="width70 d-flex justify-content-between"><p>0 Seconds</p> <p>100 Seconds</p></span> -->
                 </span>
-                <input id="threedduration_voiceover" type="number" name="threedduration_voiceover" class="form-control voiceover_class">
+                <input id="threedduration_voiceover" type="number" name="threedduration_voiceover" class="form-control voiceover_class" placeholder="20 (words)">
                 <span id="threedscriptspan" class="flex-col">
                     <textarea class="paste_script" id="threedduration_script" name="threedduration_script" rows="5" class="form-control" placeholder="Paste Your Script"></textarea>
                     <span class="d-flex width100 col-gap-10 justify-content-start">
@@ -705,14 +753,14 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="threedlowan" name="threedanimationquality" value="threedlowan">
+                    <input type="radio" id="threedlowan" name="threedanimationquality" value="threedlowan" alt="Cartoon">
                     <label for="threedlowan" class="showExample" target="15">Cartoon</label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="threedmediuman" name="threedanimationquality" value="threedmediuman">
+                    <input type="radio" id="threedmediuman" name="threedanimationquality" value="threedmediuman" alt="Product">
                     
                     <label for="threedmediuman" class="showExample" target="16">Product</label>
                 </span>
@@ -720,7 +768,7 @@
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="threedhighan" name="threedanimationquality" value="threedhighan">
+                    <input type="radio" id="threedhighan" name="threedanimationquality" value="threedhighan" alt="Architecture">
                    
                     <label for="threedhighan" class="showExample" target="17">Architecture </label>
                 </span>
@@ -728,7 +776,7 @@
               </div>
               <div class="label-img">
                 <span>
-                    <input type="radio" id="threedfashion" name="threedanimationquality" value="threedfashion">
+                    <input type="radio" id="threedfashion" name="threedanimationquality" value="threedfashion" alt="Fashion">
                    
                     <label for="threedfashion" class="showExample" target="18">Fashion </label>
                 </span>
@@ -793,21 +841,21 @@
             <div class="duration">
               <div class="label-img">
                 <span>
-                    <input type="radio" id="threedlowch" name="threedcharacterquality" value="threedlowch">
+                    <input type="radio" id="threedlowch" name="threedcharacterquality" value="threedlowch" alt="Quality 1">
                     <label for="threedlowch" class="showExample" target="19">Quality 1 </label>
                 </span>
                
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="threedmediumch" name="threedcharacterquality" value="threedmediumch">
+                    <input type="radio" id="threedmediumch" name="threedcharacterquality" value="threedmediumch" alt=" Quality 2">
                     <label for="threedmediumch" class="showExample" target="20">Quality 2 </label>
                 </span>
 
               </div>
                 <div class="label-img">
                 <span>
-                    <input type="radio" id="threedhighch" name="threedcharacterquality" value="threedhighch">
+                    <input type="radio" id="threedhighch" name="threedcharacterquality" value="threedhighch" alt="Quality 3">
                     <label for="threedhighch" class="showExample" target="21">Quality 3 </label>
                 </span>
                 
@@ -906,7 +954,7 @@
                 <img src="assets/images/checkbox-icons/description.png" alt="">
               <label for="threedstoryboard">StoryBoard</label>
             </span>
-              <input type="checkbox" name="threedstoryboard" id="threedstoryboard">
+              <input type="checkbox" name="threedstoryboard" id="threedstoryboard" value="Storyboard">
               
             </span>
             <span class="checkone checkboxdesign">
@@ -914,7 +962,7 @@
                 <img src="assets/images/checkbox-icons/record_voice_over.png" alt="">
              <label for="threedvoiceover">Voicover</label>
             </span>
-              <input type="checkbox" name="threedvoiceover" id="threedvoiceover">
+              <input type="checkbox" name="threedvoiceover" id="threedvoiceover" value="Voiceover">
               
               </span>
 
@@ -923,7 +971,7 @@
                   <img src="assets/images/checkbox-icons/music_note.png" alt="">
                 <label for="threedsoundeffects">Music</label>
                   </span>
-                <input type="checkbox" name="threedsoundeffects" id="threedsoundeffects">
+                <input type="checkbox" name="threedsoundeffects" id="threedsoundeffects" value="Music">
                 
               </span>
               
@@ -933,7 +981,7 @@
                   <img src="assets/images/checkbox-icons/graphic_eq.png" alt="">
                 <label for="threedmusictrack">SFX</label>
               </span> 
-                <input type="checkbox" name="threedmusictrack" id="threedmusictrack">
+                <input type="checkbox" name="threedmusictrack" id="threedmusictrack" value="SFX">
               
               </span>
              
@@ -954,10 +1002,37 @@
 
         <p class="total-class">
           <span class="card-header-total">Cost Estimation</span>
-          <span class="main-span"><span>Time Duration</span><input type="text" name="threeddurationvalueone" id="threedduration" value="0" class="form-control form-total"></span>
-          <span class="main-span"><span>Animation Type</span><input type="text" name="threedanimationstyle" id="threedanimationstyle" value="0" class="form-control form-total"></span>
-           <span class="main-span"><span>Animation Quality</span><input type="text" name="threeddrawingdetails" id="threeddrawingdetails" value="0" class="form-control form-total"></span>
-           <span class="main-span"><span>Additional Features</span><input type="text" name="threedadditionalfeatures" id="threedadditionalfeatures" value="0" class="form-control form-total"></span>
+          <span class="main-span"><span>Time Duration</span>
+          <span class="withlabel"> 
+          <input type="text" name="threeddurationvalueone" id="threedduration" value="0" class="form-control form-total">
+          <span id="showthreedduration">Enter Duration</span>
+        </span>
+        </span>
+
+
+          <span class="main-span"><span>Animation Type</span>
+          <span class="withlabel">
+          <input type="text" name="threedanimationstyle" id="threedanimationstyle" value="0" class="form-control form-total">
+          <span id="showthreedanimestyle">Cartoon</span>
+        </span>
+      </span>
+           <span class="main-span"><span>Animation Quality</span>
+            <span class="withlabel">
+              <input type="text" name="threeddrawingdetails" id="threeddrawingdetails" value="0" class="form-control form-total">
+              <span id="showthreeddrawingdetails">Quality 1</span>
+            </span>
+          </span>
+           <span class="main-span"><span>Additional Features</span>
+           <span class="withlabel">
+            <span class="additiona-features-inner">
+               <span id="showthreedfeaturesone"> </span>
+              <span id="showthreedfeaturestwo"> </span>
+              <span id="showthreedfeaturesthree"> </span>
+              <span id="showthreedfeaturesfour"> </span>
+             </span>
+           <input type="text" name="threedadditionalfeatures" id="threedadditionalfeatures" value="0" class="form-control form-total">
+          </span>
+          </span>
           <span class="total-amount-class">Estimated Amount <input type="text" name="threedtotal" id="threedtotal" value="0" class="form-control form-total"></span>
           </p>
     </div> 

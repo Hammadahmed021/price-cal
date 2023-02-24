@@ -141,8 +141,8 @@ $(document).ready(function(){
             });
         }
         let x = $("input[type='radio'][name='expdurationcount']:checked").attr('alt');  
-        console.log(x);      
-        document.getElementById("showcount").innerHTML = x;
+        document.getElementById("showduration").innerHTML = x;
+        
     });
 
     
@@ -167,6 +167,8 @@ $(document).ready(function(){
                 exprecal();
                 break;                                
         }
+        let x = $("input[type='radio'][name='expanimationquality']:checked").attr('alt');  
+        document.getElementById("showanimestyle").innerHTML = x;
     });
     $('input[type=radio][name=expcharacterquality]').change(function() {
         let expquality = this.value;
@@ -187,6 +189,8 @@ $(document).ready(function(){
                 exprecal();
                 break;                                
         }
+        let x = $("input[type='radio'][name='expcharacterquality']:checked").attr('alt');  
+        document.getElementById("showdrawingquality").innerHTML = x;
     });
 
     // let expStoryboardPrice = 2000; 
@@ -204,11 +208,15 @@ $(document).ready(function(){
             expfourstory = expStoryboardPrice;
             $('#expadditionalfeatures').val(expfourstory);
             expchecked();
-            exprecal();
+            exprecal();  
+            $('#showfeaturesone').html($("input[type='checkbox'][name='expstoryboard']:checked").val());
+            
         } else {
             expfourstory = 0;
             expchecked();
             exprecal();
+            $('#showfeaturesone').html(null);
+           
         }
     });
     $("#expvoiceover").click(function () {
@@ -217,10 +225,12 @@ $(document).ready(function(){
             $('#expadditionalfeatures').val(expfourvoice);
             expchecked();
             exprecal();
+            $('#showfeaturestwo').html($("input[type='checkbox'][name='expvoiceover']:checked").val());
         } else {
             expfourvoice = 0;
             expchecked();
             exprecal();
+            $('#showfeaturestwo').html(null);
         }
     });
     $("#expsoundeffects").click(function () {
@@ -228,11 +238,13 @@ $(document).ready(function(){
             expfoursound = expSoundeffectsPrice;
             $('#expadditionalfeatures').val(expfoursound);
             expchecked();
-            exprecal();            
+            exprecal();       
+            $('#showfeaturesthree').html($("input[type='checkbox'][name='expsoundeffects']:checked").val());     
         } else {
             expfoursound = 0;
             expchecked();
             exprecal();
+            $('#showfeaturesthree').html(null);
         }
     });
     $("#expmusictrack").click(function () {
@@ -240,11 +252,13 @@ $(document).ready(function(){
             expfourmusic = expMusictrackPrice;
             $('#expadditionalfeatures').val(expfourmusic);
             expchecked();
-            exprecal();            
+            exprecal();   
+            $('#showfeaturesfour').html($("input[type='checkbox'][name='expmusictrack']:checked").val());         
         } else {
             expfourmusic = 0;
             expchecked();
             exprecal();
+            $('#showfeaturesfour').html(null);
         }
     });        
     
@@ -361,6 +375,8 @@ $(document).ready(function(){
                 whiterecal();
             });
         }
+        let x = $("input[type='radio'][name='whitedurationcount']:checked").attr('alt');  
+        document.getElementById("showwhitecount").innerHTML = x;
     });
     $('input[type=radio][name=whiteanimationquality]').change(function() {
         let whitequality = this.value;
@@ -391,6 +407,8 @@ $(document).ready(function(){
                 whiterecal();
                 break;                                    
         }
+        let x = $("input[type='radio'][name='whiteanimationquality']:checked").attr('alt');  
+        document.getElementById("showwhiteanimestyle").innerHTML = x;
     });
     $('input[type=radio][name=whitecharacterquality]').change(function() {
         let whitequality = this.value;
@@ -411,54 +429,64 @@ $(document).ready(function(){
                 whiterecal();
                 break;                                
         }
+        let x = $("input[type='radio'][name='whitecharacterquality']:checked").attr('alt');  
+        document.getElementById("showwhitedrawingdetails").innerHTML = x;
     });   
 
     $("#whitestoryboard").click(function () {
         if ($(this).is(":checked")) {
             whitefourstory = whiteStoryboardPrice;
             $('#whiteadditionalfeatures').val(whitefourstory);
+            $('#showwhitefeaturesone').html($("input[type='checkbox'][name='whitestoryboard']:checked").val());
             whitechecked();
             whiterecal();
         } else {
             whitefourstory = 0;
             whitechecked();
             whiterecal();
+            $('#showwhitefeaturesone').html(null);
         }
     });
     $("#whitevoiceover").click(function () {
         if ($(this).is(":checked")) {
             whitefourvoice = whiteVoiceoverPrice;
             $('#whiteadditionalfeatures').val(whitefourvoice);
+            $('#showwhitefeaturestwo').html($("input[type='checkbox'][name='whitevoiceover']:checked").val());
             whitechecked();
             whiterecal();
         } else {
             whitefourvoice = 0;
             whitechecked();
             whiterecal();
+            $('#showwhitefeaturestwo').html(null);
         }
     });
     $("#whitesoundeffects").click(function () {
         if ($(this).is(":checked")) {
             whitefoursound = whiteSoundeffectsPrice;
             $('#whiteadditionalfeatures').val(whitefoursound);
+            $('#showwhitefeaturesthree').html($("input[type='checkbox'][name='whitesoundeffects']:checked").val());
             whitechecked();
             whiterecal();            
         } else {
             whitefoursound = 0;
             whitechecked();
             whiterecal();
+            $('#showwhitefeaturesthree').html(null);
         }
     });
     $("#whitemusictrack").click(function () {
         if ($(this).is(":checked")) {
             whitefourmusic = whiteMusictrackPrice;
             $('#whiteadditionalfeatures').val(whitefourmusic);
+            $('#showwhitefeaturesfour').html($("input[type='checkbox'][name='whitemusictrack']:checked").val());
             whitechecked();
             whiterecal();            
         } else {
             whitefourmusic = 0;
             whitechecked()
             whiterecal();
+            $('#showwhitefeaturesfour').html(null);
         }
     }); 
       // --------------3d Animation Variables-----------------
@@ -574,6 +602,8 @@ $(document).ready(function(){
                   threedrecal();
               });
           }
+          let x = $("input[type='radio'][name='threeddurationcount']:checked").attr('alt');  
+          document.getElementById("showthreedduration").innerHTML = x;
       });
       $('input[type=radio][name=threedanimationquality]').change(function() {
           let threedquality = this.value;
@@ -598,8 +628,9 @@ $(document).ready(function(){
                     $('#threedanimationstyle').val("$ "+threedtwo);
                     threedrecal();
                     break;     
-                
-          }
+                 }
+                 let x = $("input[type='radio'][name='threedanimationquality']:checked").attr('alt');  
+          document.getElementById("showthreedanimestyle").innerHTML = x;
       });
       $('input[type=radio][name=threedcharacterquality]').change(function() {
           let threedquality = this.value;
@@ -620,12 +651,15 @@ $(document).ready(function(){
                   threedrecal();
                   break;                                
           }
+          let x = $("input[type='radio'][name='threedcharacterquality']:checked").attr('alt');  
+        document.getElementById("showthreeddrawingdetails").innerHTML = x;
       });   
 
       $("#threedstoryboard").click(function () {
         if ($(this).is(":checked")) {
             threedfourstory = threedStoryboardPrice;
             $('#threedadditionalfeatures').val(threedfourstory);
+            $('#showthreedfeaturesone').html($("input[type='checkbox'][name='threedstoryboard']:checked").val());
             threedchecked();
             threedrecal();
 
@@ -633,42 +667,49 @@ $(document).ready(function(){
             threedfourstory = 0;
             threedchecked()
             threedrecal();
+            $('#showthreedfeaturesone').html(null);
         }
     });
     $("#threedvoiceover").click(function () {
         if ($(this).is(":checked")) {
             threedfourvoice = threedVoiceoverPrice;
             $('#threedadditionalfeatures').val(threedfourvoice);
+            $('#showthreedfeaturestwo').html($("input[type='checkbox'][name='threedvoiceover']:checked").val());
             threedchecked();
             threedrecal();
         } else {
             threedfourvoice = 0;
             threedchecked()
             threedrecal();
+            $('#showthreedfeaturestwo').html(null);
         }
     });
     $("#threedsoundeffects").click(function () {
         if ($(this).is(":checked")) {
             threedfoursound = threedSoundeffectsPrice;
             $('#threedadditionalfeatures').val(threedfoursound);
+            $('#showthreedfeaturesthree').html($("input[type='checkbox'][name='threedsoundeffects']:checked").val());
             threedchecked();
             threedrecal();            
         } else {
             threedfoursound = 0;
             threedchecked()
             threedrecal();
+            $('#showthreedfeaturesthree').html(null);
         }
     });
     $("#threedmusictrack").click(function () {
         if ($(this).is(":checked")) {
             threedfourmusic = threedMusictrackPrice;
             $('#threedadditionalfeatures').val(threedfourmusic);
+            $('#showthreedfeaturesfour').html($("input[type='checkbox'][name='threedmusictrack']:checked").val());
             threedchecked();
             threedrecal();            
         } else {
             threedfourmusic = 0;
             threedchecked()
             threedrecal();
+            $('#showthreedfeaturesfour').html(null);
         }
     }); 
    
