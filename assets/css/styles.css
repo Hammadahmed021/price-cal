@@ -93,8 +93,27 @@ p.total-class span.main-span span.additiona-features-inner {
   align-content: center;
 }
 p.total-class span.main-span .withlabel span {
-  font-size: 10px;
-  color: #030e4c;
+  font-size: 8px;
+  color: white;
+  background: #030e4c;
+  padding: 5px;
+  border-radius: 5px;
+}
+p.total-class span.main-span .withlabel .additiona-features-inner{
+  background: transparent;
+  color: unset;
+  padding: 0;
+ 
+  border-radius: 0;
+}
+p.total-class span.main-span .withlabel .additiona-features-inner span {
+  font-size: 8px;
+  color: white;
+  background: #030e4c;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 8px;
 }
 .border-duration span label span {
   padding: 5px;
@@ -117,13 +136,12 @@ span.total-amount-class{
 span.total-amount-class input{
   font-size: 16px;
 }
-p.total-class span.main-span span.additiona-features-inner span {
-  font-size: 10px !important;
-  color: #030e4c;
-  line-height: 1.2em;
-}
+
 .total-class .withlabel input{
   margin-bottom: -5px;
+}
+p.total-class span.main-span .withlabel .additiona-features-inner span{
+  display: none;
 }
 .total-class {
   position: fixed ;
